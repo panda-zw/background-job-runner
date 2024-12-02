@@ -3,6 +3,15 @@
 use Illuminate\Support\Facades\Log;
 use Mockery;
 
+it('checks only logged in user can view jobs', function () {
+    // Arrange
+    $user = \App\Models\User::factory()->create();
+    $response = $this->actingAs($user)->get(route('jobs.index'));
+
+    // Assert
+    $response->assertStatus(200);
+});
+
 it('queues a valid job successfully', function () {
     // Arrange
     $class = \App\CustomJobs\ExampleJob::class;
