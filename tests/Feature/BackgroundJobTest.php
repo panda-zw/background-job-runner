@@ -92,3 +92,5 @@ it('logs unauthorized job attempts', function () {
     // Assert
     expect($result)->toBeFalse();
 });
+
+// TODO: only logged in user can queue job from dashboard
