@@ -11,6 +11,7 @@ This repository provides a custom background job runner system for Laravel appli
 - Configurable retry attempts and delays for jobs.
 - Error handling with detailed logging.
 - Secure execution of pre-approved classes and methods.
+- Live Background Job Runner Status Indicator (green/red dot).
 
 ---
 
@@ -27,7 +28,7 @@ This repository provides a custom background job runner system for Laravel appli
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/panda-zw/background-job-runner.git
    cd your-repo
 
 2. **Install Dependencies**
@@ -41,9 +42,9 @@ This repository provides a custom background job runner system for Laravel appli
 
 4. **Run Migrations** Run the migrations to set up the database tables and also seed the default user:
     ```bash
-    php artisan migrate
+    php artisan migrate --seed
 
-5. **Approve Job Classes** Add your approved job classes and methods to the config/jobs.php configuration file:
+5. **Approve Job Classes** Add your approved job classes and methods to the `config/jobs.php` configuration file:
     ```php
     return [
         'approved_classes' => [
@@ -107,6 +108,11 @@ A real-time dashboard is available to monitor and manage jobs:
 
 4. **Cancel Jobs**: Cancel pending jobs directly from the dashboard.
 
+5. **Background Job Runner Status Indicator**:
+
+    - A green dot indicates that the background runner is active and running.
+    - A red dot indicates that the background runner is inactive.
+    The status is updated every 5 seconds using a simple polling mechanism.
 
 ---
 
@@ -119,9 +125,9 @@ A real-time dashboard is available to monitor and manage jobs:
     ```bash
     composer run dev
 
-- This will
-*Start the Laravel server at http://127.0.0.1:8000
-Run the background job runner in parallel.*
+This will
+* Start the Laravel server at http://127.0.0.1:8000
+* Run the background job runner in parallel.
 
 ### Configuration
 
