@@ -175,6 +175,36 @@ Errors are logged in `storage/logs/background_jobs_errors.log`.
 **Unauthorized Job Handling**: Tests that unauthorized classes or methods are rejected.
     
 
+## Limitations
+
+While this custom background job runner is a powerful alternative to Laravel's built-in queue system, it has the following limitations:
+
+1. **Basic Priority System**:
+   - Job prioritization is handled locally based on numeric values. It does not support advanced features like priority queues in distributed systems.
+
+2. **Single Process Execution**:
+   - The runner processes one job at a time. For concurrent job execution, you need to run multiple instances of the `background_runner.php` script manually.
+
+3. **Limited Fault Tolerance**:
+   - While the system retries failed jobs, it doesn't provide advanced fault-tolerance mechanisms like delayed retries with exponential backoff.
+
+4. **Security Considerations**:
+   - Only pre-approved classes and methods can be executed to avoid malicious code execution. Ensure your `config/jobs.php` file is well-maintained to prevent unauthorized access.
+
+5. **No Real-Time Worker Scaling**:
+   - Unlike Laravel Horizon, this runner doesn't automatically scale workers based on job volume or system load.
+
+6. **Basic Dashboard Functionality**:
+   - The dashboard provides essential features but lacks advanced analytics, detailed job insights, or real-time notifications.
+
+7. **No Encryption or Isolation**:
+    - Job parameters are stored as plain text in the database. Sensitive data should be encrypted or obfuscated before being passed to jobs.
+
+8. **Manual Deployment**:
+    - The system does not include deployment automation for the background runner. You need to configure tools like Supervisor or systemd manually for production environments.
+
+---
+
 
 ## License
 
