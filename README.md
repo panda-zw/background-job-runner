@@ -153,3 +153,9 @@ Errors are logged in `storage/logs/background_jobs_errors.log`.
 **Priority Execution**: Verifies jobs are executed in the correct priority order.
 **Unauthorized Job Handling**: Tests that unauthorized classes or methods are rejected.
     
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
