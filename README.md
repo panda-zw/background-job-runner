@@ -24,6 +24,12 @@ This repository provides a custom background job runner system for Laravel appli
 
 ---
 
+## Usage Overview
+
+For advanced usage and configuration, see the [Job Runner Documentation](docs/job_runner.md).
+ 
+---
+
 ## Installation
 
 1. **Clone the Repository**
@@ -74,6 +80,7 @@ This repository provides a custom background job runner system for Laravel appli
         priority: 5,
         delay: 0
     );
+    
 
 ##### Run the Background Job Script
 
@@ -90,6 +97,20 @@ This repository provides a custom background job runner system for Laravel appli
 
     ```bash
     composer run dev
+
+##### Monitoring Jobs
+- Access the dashboard to view and manage jobs:
+
+    ```bash
+    http://localhost:8000/jobs
+
+##### Background Runner Status
+- The dashboard includes a status indicator:
+
+    `Green Dot`: Background runner is active.
+    `Red Dot`: Background runner is inactive.
+
+For advanced usage and configuration, see the [Job Runner Documentation](docs/job_runner.md).
 
 ---
 
