@@ -54,8 +54,8 @@ For advanced usage and configuration, see the [Job Runner Documentation](docs/jo
     ```php
     return [
         'approved_classes' => [
-            \App\Jobs\ExampleJob::class,
-            \App\Jobs\HighPriorityJob::class,
+            \App\CustomJobs\ExampleJob::class,
+            \App\CustomJobs\HighPriorityJob::class,
             # add others
         ],
         'approved_methods' => [
@@ -74,7 +74,7 @@ For advanced usage and configuration, see the [Job Runner Documentation](docs/jo
 
     ```php
     runBackgroundJob(
-        class: \App\Jobs\ExampleJob::class,
+        class: \App\CustomJobs\ExampleJob::class,
         method: 'execute',
         params: ['param1' => 'value1', 'param2' => 'value2'],
         priority: 5,
