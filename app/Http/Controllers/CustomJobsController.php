@@ -78,7 +78,6 @@ class CustomJobsController extends Controller
         $validated = request()->validate([
             'job_class' => 'required|string',
             'priority' => 'required|integer|min:0',
-            'retry_count' => 'required|integer|min:0',
             'delay' => 'required|integer|min:0',
         ]);
 

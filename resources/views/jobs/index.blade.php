@@ -45,7 +45,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 mb-6">
                 <form action="{{ route('jobs.run') }}" method="POST">
                     @csrf
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-3 gap-4">
                         <div class="mb-2">
                             <label for="job_class" class="block text-gray-700 font-bold mb-2">Select Job Class</label>
                             <select name="job_class" id="job_class"
@@ -60,13 +60,6 @@
                         <div class="mb-2">
                             <label for="priority" class="block text-gray-700 font-bold mb-2">Priority</label>
                             <input type="number" name="priority" id="priority" min="0"
-                                class="form-input border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
-                                value="0" required>
-                        </div>
-
-                        <div class="mb-4">
-                            <label for="retry_count" class="block text-gray-700 font-bold mb-2">Retry Count</label>
-                            <input type="number" name="retry_count" id="retry_count" min="0"
                                 class="form-input border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
                                 value="0" required>
                         </div>
